@@ -1,0 +1,29 @@
+def isDisarium(num):
+    num_str = str(num)
+    total = 0
+    for i in range(len(num_str)):
+        total += int(num_str[i]) ** (i + 1)
+    return total == num
+
+def firstNDisarium(n):
+    count = 0
+    num = 0
+    while count < n:
+        if isDisarium(num):
+            print(num, end=' ')
+            count += 1
+        num += 1
+    print()
+
+def disariumInRange(start, end):
+    for num in range(start, end + 1):
+        if isDisarium(num):
+            print(num, end=' ')
+    print()
+
+n = 10
+firstNDisarium(n)
+
+start = 100
+end = 200
+disariumInRange(start, end)
